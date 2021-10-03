@@ -1,0 +1,11 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: e-commerce
+spec:
+  scaleTargetRef:
+    kind: ReplicaSet
+    name: e-commerce
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 10

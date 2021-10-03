@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: e-commerce
+spec:
+  podSelector:
+    matchLabels:
+      role: e-commerce
+  policyTypes:
+    - Ingress
+  ingress:
+  - ports:
+    - protocol: TCP
+      port: 8080
+  - from:
+      - namespaceSelector:
+          matchLabels:
+            name: ingress

@@ -1,4 +1,12 @@
-# EcomPj001
+# install typescript:
+
+npm install -g typescript
+tsc --version
+tsc --help
+tsc src/test.ts 
+tsc src/test.js 
+
+# e-commerce
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 

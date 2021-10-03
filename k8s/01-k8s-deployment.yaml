@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: e-commerce
+  labels:
+    purpose: e-commerce
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: e-commerce
+  template:
+    metadata:
+      name: e-commerce
+      labels:
+        app: e-commerce
+    spec:
+      imagePullSecrets:
+        - name: repo-treescale-secret
+      containers:
+      - name: e-commerce
+        image: repo.treescale.com/chandrakumar001/e-commerce:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+            protocol: TCP
